@@ -1,0 +1,11 @@
+pl:
+  support:
+    array:
+      # Rails 2.2
+      sentence_connector: "i"
+      skip_last_comma: true
+      
+      # Rails 2.3
+      words_connector: ", "
+      two_words_connector: " i "
+      last_word_connector: " i "

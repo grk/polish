@@ -1,0 +1,81 @@
+# Polish translations for Ruby on Rails
+# by Jacek Becela (jacek.becela@gmail.com, http://github.com/ncr)
+
+pl:
+  number:
+    format:
+      separator: ","
+      delimiter: " "
+      precision: 2
+    currency:
+      format:
+        format: "%n %u"
+        unit: "PLN"
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "bajt"
+            other: "bajty"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "pół minuty"
+      less_than_x_seconds:
+        one:   "mniej niż sekundę"
+        few:   "mniej niż {{count}} sekundy"
+        other: "mniej niż {{count}} sekund"
+      x_seconds:
+        one:   "sekundę"
+        few:   "{{count}} sekundy"
+        other: "{{count}} sekund"
+      less_than_x_minutes:
+        one:   "mniej niż minutę"
+        few:   "mniej niż {{count}} minuty"
+        other: "mniej niż {{count}} minut"
+      x_minutes:
+        one:   "minutę"
+        few:   "{{count}} minuty"
+        other: "{{count}} minut"
+      about_x_hours:
+        one:   "około godziny"
+        other: "about {{count}} godzin"
+      x_days:
+        one:   "1 dzień"
+        other: "{{count}} dni"
+      about_x_months:
+        one:   "około miesiąca"
+        other: "około {{count}} miesięcy"
+      x_months:
+        one:   "1 miesiąc"
+        few:   "{{count}} miesiące"
+        other: "{{count}} miesięcy"
+      about_x_years:
+        one:   "około roku"
+        other: "około {{count}} lat"
+      over_x_years:
+        one:   "ponad rok"
+        few:   "ponad {{count}} lata"
+        other: "ponad {{count}} lat"
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one:    "{{model}} nie został zachowany z powodu jednego błędu"
+          other:  "{{model}} nie został zachowany z powodu {{count}} błędów"
+        body: "Błędy dotyczą następujących pól:"
