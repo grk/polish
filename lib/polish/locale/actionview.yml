@@ -71,6 +71,13 @@ pl:
         one:   "ponad rok"
         few:   "ponad {{count}} lata"
         other: "ponad {{count}} lat"
+    prompts:
+      year: "Rok"
+      month: "Miesiąc"
+      day: "Dzień"
+      hour: "Godzina"
+      minute: "Minuta"
+      second: "Sekunda"
 
   activerecord:
     errors:

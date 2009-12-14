@@ -6,7 +6,7 @@ require 'date'
 require 'I18n'
  
 GEM = "polish"
-GEM_VERSION = "0.0.1"
+GEM_VERSION = "0.0.2"
 AUTHOR = "Grzesiek Kolodziejczyk"
 EMAIL = "gkolodziejczyk@gmail.com"
 HOMEPAGE = "http://github.com/grk/polish/"
