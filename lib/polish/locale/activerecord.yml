@@ -12,11 +12,11 @@ pl:
         too_long: 
           one: "jest za długie (maksymalnie {{count}} znak)"
           few: "jest za długie (maksymalnie {{count}} znaki)"
-          many: "jest za długie (maksymalnie {{count}} znaków)"
+          other: "jest za długie (maksymalnie {{count}} znaków)"
         too_short:
           one: "jest za krótkie (minimalnie {{count}} znak)"
           few: "jest za krótkie (minimalnie {{count}} znaki)"
-          many: "jest za krótkie (minimalnie {{count}} znaków)"
+          other: "jest za krótkie (minimalnie {{count}} znaków)"
         wrong_length: "jest nieprawidłowej długości (powinna wynosić {{count}} znaków)"
         taken: "zostało już zajęte"
         not_a_number: "nie jest liczbą"
