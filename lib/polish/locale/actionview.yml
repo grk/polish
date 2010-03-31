@@ -53,12 +53,15 @@ pl:
         other: "{{count}} minut"
       about_x_hours:
         one:   "około godziny"
+        few:   "około {{count}} godzin"
         other: "około {{count}} godzin"
       x_days:
         one:   "1 dzień"
+        few:   "{{count}} dni"
         other: "{{count}} dni"
       about_x_months:
         one:   "około miesiąca"
+        few:   "około {{count}} miesięcy"
         other: "około {{count}} miesięcy"
       x_months:
         one:   "1 miesiąc"
@@ -66,6 +69,7 @@ pl:
         other: "{{count}} miesięcy"
       about_x_years:
         one:   "około roku"
+        few:   "około {{count}} lat"
         other: "około {{count}} lat"
       over_x_years:
         one:   "ponad rok"
