@@ -41,6 +41,9 @@ describe I18n, "Polish Date/Time localization" do
     it "should use month names" do
       l(@date, :format => "%d %B").should == "01 grudnia"
       l(@date, :format => "%e %B %Y").should == " 1 grudnia 1985"
+      l(@date, :format => "<b>%d</b> %B").should == "<b>01</b> grudnia"
+      l(@date, :format => "<strong>%e</strong> %B %Y").should == "<strong> 1</strong> grudnia 1985"
+      l(@date, :format => "A było to dnia %ego miesiąca %B %Y").should == "A było to dnia  1go miesiąca grudnia 1985"
     end
     
     it "should use standalone month names" do
