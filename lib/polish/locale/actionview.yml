@@ -96,7 +96,7 @@ pl:
       update: 'Aktualizuj %{model}'
       submit: 'Zapisz %{model}'
 
-  activerecord:
+  activemodel:
     errors:
       template:
         header:

@@ -14,7 +14,7 @@ end
 
 
 # Advanced backend
-require 'backend/advanced'
+require 'polish/backend/advanced'
  
 # Rails hacks
 if defined?(ActionView::Helpers)

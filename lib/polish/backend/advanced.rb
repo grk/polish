@@ -8,6 +8,8 @@ module I18n
     # for DateTime localization and usage of user-defined Proc (lambda) pluralization
     # methods in translation tables.
     class Advanced < Simple
+      include I18n::Backend::Pluralization
+
       LOCALIZE_ABBR_MONTH_NAMES_MATCH = /(%d|%e)(.*)(%b)/
       LOCALIZE_MONTH_NAMES_MATCH = /(%d|%e)(.*)(%B)/
       LOCALIZE_STANDALONE_ABBR_DAY_NAMES_MATCH = /^%a/
@@ -24,84 +26,49 @@ module I18n
       def localize(locale, object, format = :default, options = nil)
         raise ArgumentError, "Object must be a Date, DateTime or Time object. #{object.inspect} given." unless object.respond_to?(:strftime)
         type = object.respond_to?(:sec) ? 'time' : 'date'
-        # TODO only translate these if format is a String?
-        formats = translate(locale, :"#{type}.formats")
-        format = formats[format.to_sym] if formats && formats[format.to_sym]
-        # TODO raise exception unless format found?
-        format = format.to_s.dup
- 
-        # TODO only translate these if the format string is actually present
-        # TODO check which format strings are present, then bulk translate then, then replace them
+
+        if Symbol === format
+          key = format
+          type = object.respond_to?(:sec) ? 'time' : 'date'
+          format = I18n.t(:"#{type}.formats.#{key}", :locale => locale, :raise => true)
+        end
+
+        format = resolve(locale, object, format, options).to_s.dup
  
         if lookup(locale, :"date.standalone_abbr_day_names")
           format.gsub!(LOCALIZE_STANDALONE_ABBR_DAY_NAMES_MATCH, 
-            translate(locale, :"date.standalone_abbr_day_names")[object.wday])
+            I18n.t(:"date.standalone_abbr_day_names", :locale => locale, :format => format)[object.wday])
         end
-        format.gsub!(/%a/, translate(locale, :"date.abbr_day_names")[object.wday])
+        format.gsub!(/%a/, I18n.t(:"date.abbr_day_names", :locale => locale, :format => format)[object.wday])
         
         if lookup(locale, :"date.standalone_day_names")
           format.gsub!(LOCALIZE_STANDALONE_DAY_NAMES_MATCH, 
-            translate(locale, :"date.standalone_day_names")[object.wday])
+            I18n.t(:"date.standalone_day_names", :locale => locale, :format => format)[object.wday])
         end
-        format.gsub!(/%A/, translate(locale, :"date.day_names")[object.wday])
+        format.gsub!(/%A/, I18n.t(:"date.day_names", :locale => locale, :format => format)[object.wday])
  
         if lookup(locale, :"date.standalone_abbr_month_names")
           format.gsub!(LOCALIZE_ABBR_MONTH_NAMES_MATCH) do
-            $1 + $2 + translate(locale, :"date.abbr_month_names")[object.mon]
+            $1 + $2 + I18n.t(:"date.abbr_month_names", :locale => locale, :format => format)[object.mon]
           end
-          format.gsub!(/%b/, translate(locale, :"date.standalone_abbr_month_names")[object.mon])
+          format.gsub!(/%b/, I18n.t(:"date.standalone_abbr_month_names", :locale => locale, :format => format)[object.mon])
         else
-          format.gsub!(/%b/, translate(locale, :"date.abbr_month_names")[object.mon])
+          format.gsub!(/%b/, I18n.t(:"date.abbr_month_names", :locale => locale, :format => format)[object.mon])
         end
  
         if lookup(locale, :"date.standalone_month_names")
           format.gsub!(LOCALIZE_MONTH_NAMES_MATCH) do
-            $1 + $2 + translate(locale, :"date.month_names")[object.mon]
+            $1 + $2 + I18n.t(:"date.month_names", :locale => locale, :format => format)[object.mon]
           end
-          format.gsub!(/%B/, translate(locale, :"date.standalone_month_names")[object.mon])
+          format.gsub!(/%B/, I18n.t(:"date.standalone_month_names", :locale => locale, :format => format)[object.mon])
         else
-          format.gsub!(/%B/, translate(locale, :"date.month_names")[object.mon])
+          format.gsub!(/%B/, I18n.t(:"date.month_names", :locale => locale, :format => format)[object.mon])
         end
  
-        format.gsub!(/%p/, translate(locale, :"time.#{object.hour < 12 ? :am : :pm}")) if object.respond_to? :hour
+        format.gsub!(/%p/, I18n.t(:"time.#{object.hour < 12 ? :am : :pm}", :locale => locale, :format => format)) if object.respond_to? :hour
+
         object.strftime(format)
       end
-      
-      protected
-        # Picks a pluralization rule specified in translation tables for a language or
-        # uses default pluralization rules.
-        #
-        # This is how pluralization rules are defined in translation tables, English
-        # language for example:
-        #
-        #   store_translations :'en', {
-        #     :pluralize => lambda { |n| n == 1 ? :one : :other }
-        #   }
-        #
-        # Rule must return a symbol to use with pluralization, it must be one of:
-        #   :zero, :one, :two, :few, :many, :other
-        def pluralize(locale, entry, count)
-          return entry unless entry.is_a?(Hash) and count
- 
-          key = :zero if count == 0 && entry.has_key?(:zero)
-          locale_pluralize = lookup(locale, :pluralize)
-          if locale_pluralize && locale_pluralize.respond_to?(:call)
-            key ||= locale_pluralize.call(count)
-          else
-            key ||= default_pluralizer(count)
-          end
-          raise InvalidPluralizationData.new(entry, count) unless entry.has_key?(key)
- 
-          entry[key]
-        end
-        
-        # Default pluralizer, used if pluralization rule is not defined in translations.
-        #
-        # Uses English pluralization rules -- it will pick the first translation if count is not equal to 1
-        # and the second translation if it is equal to 1.
-        def default_pluralizer(count)
-          count == 1 ? :one : :other
-        end
     end
   end
 end

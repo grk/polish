@@ -1,6 +1,11 @@
 pl:
   activerecord:
     errors:
+      template:
+        header:
+          one:    "{{model}} nie został zachowany z powodu jednego błędu"
+          other:  "{{model}} nie został zachowany z powodu {{count}} błędów"
+        body: "Błędy dotyczą następujących pól:"
       messages:
         record_invalid: "Znaleziono błędy: %{errors}"
         inclusion: "nie znajduje się na liście dopuszczalnych wartości"
@@ -19,7 +24,7 @@ pl:
           few: "jest za krótkie (minimalnie {{count}} znaki)"
           other: "jest za krótkie (minimalnie {{count}} znaków)"
         wrong_length: "jest nieprawidłowej długości (powinna wynosić {{count}} znaków)"
-        taken: "jest już zajęte"
+        taken: "zostało już zajęte"
         not_a_number: "nie jest liczbą"
         greater_than: "musi być większe niż {{count}}"
         greater_than_or_equal_to: "musi być większe lub równe {{count}}"

@@ -24,12 +24,10 @@ spec = Gem::Specification.new do |s|
   s.email = EMAIL
   s.homepage = HOMEPAGE
   
-  # Uncomment this to add a dependency
-  # s.add_dependency "foo"
+  s.add_dependency "i18n", ">=0.3.3"
   
   s.require_path = 'lib'
-  s.autorequire = GEM
-  s.files = %w(LICENSE README.md Rakefile TODO init.rb) + Dir.glob("{lib,spec}/**/*")
+  s.files = %w(LICENSE README.md Rakefile TODO) + Dir.glob("{lib,spec,rails}/**/*")
 end
  
 Rake::GemPackageTask.new(spec) do |pkg|
