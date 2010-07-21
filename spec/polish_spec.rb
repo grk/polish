@@ -48,9 +48,10 @@ describe Polish do
       I18n.t(:'date.formats.default', :locale => :'pl').should == "override"
     end
     
-    it "should set default locale to Polish locale" do
+    it "should not change default locale" do
+      locale = I18n.default_locale
       Polish.init_i18n
-      I18n.default_locale.should == Polish.locale
+      I18n.default_locale.should == locale
     end
   end
   

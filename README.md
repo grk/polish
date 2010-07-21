@@ -25,8 +25,6 @@ or a plugin:
     script/plugin install git://github.com/grk/polish.git
 
 
-Then, magic happens. No need to set default locale.
-
 
 Overrides
 ---------

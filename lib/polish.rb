@@ -47,11 +47,10 @@ module Polish
     I18n::Backend::Advanced
   end
   
-  # Init Polish i18n: set custom backend, set default locale to Polish locale,
+  # Init Polish i18n: set custom backend, 
   # load all translations shipped with library.
   def init_i18n
     I18n.backend = Polish.i18n_backend_class.new
-    I18n.default_locale = LOCALE
     I18n.load_path.unshift(*locale_files)
   end
  
