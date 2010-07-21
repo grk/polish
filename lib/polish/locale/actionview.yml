@@ -10,6 +10,9 @@ pl:
     currency:
       format:
         format: "%n %u"
+        separator: ","
+        delimiter: ""
+        precision: 2
         unit: "PLN"
     percentage:
       format:
@@ -82,6 +85,16 @@ pl:
       hour: "Godzina"
       minute: "Minuta"
       second: "Sekunda"
+
+  helpers:
+    select:
+      # Default value for :prompt => true in FormOptionsHelper
+      prompt: "Proszę wybrać"
+
+    submit:
+      create: 'Utwórz %{model}'
+      update: 'Aktualizuj %{model}'
+      submit: 'Zapisz %{model}'
 
   activerecord:
     errors:

@@ -71,7 +71,10 @@ describe Polish, "loading locales" do
     activerecord.errors.template.header
     activerecord.errors.template.body
     
-    support.select.prompt
+    helpers.select.prompt
+    helpers.submit.create
+    helpers.submit.update
+    helpers.submit.submit
   ).each do |key| 
     it "should define '#{key}' in actionview translations" do
       lookup(key).should_not be_nil

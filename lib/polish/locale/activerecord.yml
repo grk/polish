@@ -2,6 +2,7 @@ pl:
   activerecord:
     errors:
       messages:
+        record_invalid: "Znaleziono błędy: %{errors}"
         inclusion: "nie znajduje się na liście dopuszczalnych wartości"
         exclusion: "znajduje się na liście zabronionych wartości"
         invalid: "jest nieprawidłowe"
@@ -18,7 +19,7 @@ pl:
           few: "jest za krótkie (minimalnie {{count}} znaki)"
           other: "jest za krótkie (minimalnie {{count}} znaków)"
         wrong_length: "jest nieprawidłowej długości (powinna wynosić {{count}} znaków)"
-        taken: "zostało już zajęte"
+        taken: "jest już zajęte"
         not_a_number: "nie jest liczbą"
         greater_than: "musi być większe niż {{count}}"
         greater_than_or_equal_to: "musi być większe lub równe {{count}}"

@@ -14,7 +14,7 @@ pl:
     standalone_month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
     abbr_month_names: [~, sty., lut., mar., kwi., maj., cze., lip., sie., wrz., paź., lis., gru.]
     standalone_abbr_month_names: [~, Sty., Lut., Mar., Kwi., Maj., Cze., Lip., Sie., Wrz., Paź., Lis., Gru.]
-    order: [ :year, :month, :day ]
+    order: [ :day, :month, :year ]
 
   time:
     formats:

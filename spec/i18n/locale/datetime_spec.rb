@@ -62,7 +62,7 @@ describe I18n, "Polish Date/Time localization" do
   end
  
   it "should define default date components order: year, month, day" do
-    I18n.backend.translate(Polish.locale, :"date.order").should == [:year, :month, :day]
+    I18n.backend.translate(Polish.locale, :"date.order").should == [:day, :month, :year]
   end
  
   describe "with time formats" do
