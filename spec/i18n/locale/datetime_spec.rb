@@ -12,11 +12,11 @@ describe I18n, "Polish Date/Time localization" do
     end
  
     it "should use short format" do
-      l(@date, :format => :short).should == "01. gru."
+      l(@date, :format => :short).should == "01 gru."
     end
  
     it "should use long format" do
-      l(@date, :format => :long).should == "01. grudnia 1985"
+      l(@date, :format => :long).should == "01 grudnia 1985"
     end
   end
   
@@ -32,8 +32,8 @@ describe I18n, "Polish Date/Time localization" do
     end
     
     it "should use abbreviated day names" do
-      l(@date, :format => "%a").should == "Nie."
-      l(@date, :format => "%a, %d %b %Y").should == "Nie., 01 gru. 1985"
+      l(@date, :format => "%a").should == "Niedz."
+      l(@date, :format => "%a, %d %b %Y").should == "Niedz., 01 gru. 1985"
     end
   end
   
@@ -70,15 +70,15 @@ describe I18n, "Polish Date/Time localization" do
  
   describe "with time formats" do
     it "should use default format" do
-      l(@time).should =~ /^Nie., 01. grudnia 1985, 16:05:00/
+      l(@time).should =~ /^Niedz., 01 grudnia 1985, 16:05:00/
     end
  
     it "should use short format" do
-      l(@time, :format => :short).should == "01. gru., 16:05"
+      l(@time, :format => :short).should == "01 gru., 16:05"
     end
  
     it "should use long format" do
-      l(@time, :format => :long).should == "01. grudnia 1985, 16:05"
+      l(@time, :format => :long).should == "01 grudnia 1985, 16:05"
     end
     
     it "should define am and pm" do
@@ -86,7 +86,21 @@ describe I18n, "Polish Date/Time localization" do
       I18n.backend.translate(Polish.locale, :"time.pm").should_not be_nil
     end
   end
- 
+
+  describe "with time distances" do 
+    before do
+      @now = Time.now
+      @three_minutes_from_now = @now + 3 * 60
+      @hour_ago = @now - 60 * 60
+    end
+
+    it "should translate distance of time in words" do
+      distance_of_time_in_words(@now, @three_minutes_from_now).should == "3 minuty"
+
+    end
+
+  end
+
   protected
     def l(object, options = {})
       I18n.l(object, options.merge( { :locale => Polish.locale }))
