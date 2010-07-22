@@ -12,11 +12,11 @@ describe I18n, "Polish Date/Time localization" do
     end
  
     it "should use short format" do
-      l(@date, :format => :short).should == "01 gru."
+      l(@date, :format => :short).should == " 1 gru."
     end
  
     it "should use long format" do
-      l(@date, :format => :long).should == "01 grudnia 1985"
+      l(@date, :format => :long).should == " 1 grudnia 1985"
     end
   end
   
@@ -70,15 +70,15 @@ describe I18n, "Polish Date/Time localization" do
  
   describe "with time formats" do
     it "should use default format" do
-      l(@time).should =~ /^Niedz., 01 grudnia 1985, 16:05:00/
+      l(@time).should =~ /^Niedz.,  1 grudnia 1985, 16:05:00/
     end
  
     it "should use short format" do
-      l(@time, :format => :short).should == "01 gru., 16:05"
+      l(@time, :format => :short).should == " 1 gru., 16:05"
     end
  
     it "should use long format" do
-      l(@time, :format => :long).should == "01 grudnia 1985, 16:05"
+      l(@time, :format => :long).should == " 1 grudnia 1985, 16:05"
     end
     
     it "should define am and pm" do

@@ -2,8 +2,8 @@ pl:
   date:
     formats:
       default: "%d.%m.%Y"
-      short: "%d %b"
-      long: "%d %B %Y"
+      short: "%e %b"
+      long: "%e %B %Y"
     
     day_names: [niedziela, poniedziałek, wtorek, środa, czwartek, piątek, sobota]
     standalone_day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
@@ -18,8 +18,8 @@ pl:
 
   time:
     formats:
-      default: "%a, %d %B %Y, %H:%M:%S"
-      short: "%d %b, %H:%M"
-      long: "%d %B %Y, %H:%M"
+      default: "%a, %e %B %Y, %H:%M:%S"
+      short: "%e %b, %H:%M"
+      long: "%e %B %Y, %H:%M"
     am: "przed południem"
     pm: "po południu"
