@@ -22,6 +22,8 @@ Jeweler::Tasks.new do |gemspec|
   gemspec.add_dependency("i18n", ">= 0.3.3")
 end
 
+Jeweler::GemcutterTasks.new
+
 require 'spec/rake/spectask'
  
 task :default => :spec
