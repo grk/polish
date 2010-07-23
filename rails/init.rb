@@ -1,1 +1,1 @@
-require 'polish'
+require 'lib/polish'

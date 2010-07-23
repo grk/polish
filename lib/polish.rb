@@ -4,32 +4,19 @@ if RUBY_VERSION < "1.9"
   $KCODE = 'u'
 end
 
-$:.push File.join(File.dirname(__FILE__), 'polish')
-
-# I18n require
-unless defined?(I18n)
-  $:.push File.join(File.dirname(__FILE__), 'vendor', 'i18n', 'lib')
-  require 'i18n'
-end
-
-
-# Advanced backend
-require 'polish/backend/advanced'
- 
 # Rails hacks
 if defined?(ActionView::Helpers)
   require 'action_view_ext/helpers/date_helper' 
 end
+
+require 'polish/proxies'
  
 module Polish
   extend self
   
   module VERSION
-    MAJOR = 0
-    MINOR = 0
-    TINY  = 5
- 
-    STRING = [MAJOR, MINOR, TINY].join('.')
+    STRING = File.open(File.dirname(__FILE__) + "/../VERSION").gets.chomp
+    MAJOR, MINOR, TINY = STRING.split('.')
   end
   
   # Polish locale
