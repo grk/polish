@@ -8,23 +8,22 @@ Based on [Russian](http://github.com/yaroslav/russian/) by [yaroslav](http://git
 
 Install
 -------
-Install as a gem:
+*Warning*: as of version 0.1.0, polish is only tested with Rails 3 and Bundler. Use with caution, might give unexpected results.
 
-in `config/environment.rb`:
+To add Polish to your Rails app, simply add it to your Gemfile:
 
-    Rails::Initializer.run do |config|
-      config.gem 'polish', :source => 'http://gemcutter.org'
-    end
+  gem "polish", ">= 0.1.0"
 
-and then:
-    rake gems:install
+Additionally, if you change the backend of I18n, you will need to make sure it includes the Pluralization module:
 
+  I18n.backend.class.send(:include, I18n::Backend::Pluralization)
 
-or a plugin:
+What it does
+------------
 
-    script/plugin install git://github.com/grk/polish.git
+The main feature of polish is fixing the date formats. It does that by setting the date.month\_names and date.day\_names translations to Procs that can detect the proper form.
 
-
+Polish also adds correct pluralization rules.
 
 Overrides
 ---------
