@@ -12,7 +12,8 @@
           #   few -> n mod 10 in 2..4 and n mod 100 not in 12..14;
           #   other -> everything else
           #
-          n == 1 ? :one : [2, 3, 4].include?(n % 10) && ![12, 13, 14].include?(n % 100) ? :few : :other 
+          n == 1 ? :one : [2, 3, 4].include?(n % 10) && 
+                          ![12, 13, 14].include?(n % 100) ? :few : :other 
         }
       }
     }

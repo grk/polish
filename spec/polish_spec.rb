@@ -121,14 +121,18 @@ describe Polish do
       end
       
       it "should raise an exception when first parameter is not a number" do
-        lambda { Polish.send(method, nil, "dom", "domy", "domów") }.should raise_error(ArgumentError)
-        lambda { Polish.send(method, "dom", "domy", "domów", "domów") }.should raise_error(ArgumentError)
+        lambda { Polish.send(method, nil, "dom", "domy", "domów") }.should 
+                                                      raise_error(ArgumentError)
+        lambda { Polish.send(method, "dom", "domy", "domów", "domów") }.should 
+                                                      raise_error(ArgumentError)
       end
       
       it "should raise an exception when there are not enough variants" do
         lambda { Polish.send(method, 1) }.should raise_error(ArgumentError)
-        lambda { Polish.send(method, 1, "dom") }.should raise_error(ArgumentError)
-        lambda { Polish.send(method, 1, "dom", "domy") }.should raise_error(ArgumentError)
+        lambda { Polish.send(method, 1, "dom") }.should 
+                                                  raise_error(ArgumentError)
+        lambda { Polish.send(method, 1, "dom", "domy") }.should 
+                                                  raise_error(ArgumentError)
       end
     end
   end
