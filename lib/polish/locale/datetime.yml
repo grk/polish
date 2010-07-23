@@ -5,15 +5,6 @@ pl:
       short: "%e %b"
       long: "%e %B %Y"
     
-    day_names: [niedziela, poniedziałek, wtorek, środa, czwartek, piątek, sobota]
-    standalone_day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
-    abbr_day_names: [niedz., pon., wt., śr., czw., pt., sob.]
-    standalone_abbr_day_names: [Niedz., Pon., Wt., Śr., Czw., Pt., Sob.]
-    
-    month_names: [~, stycznia, lutego, marca, kwietnia, maja, czerwca, lipca, sierpnia, września, października, listpoada, grudnia]
-    standalone_month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
-    abbr_month_names: [~, sty., lut, mar., kwi., maj., cze., lip., sie., wrz., paź., lis., gru.]
-    standalone_abbr_month_names: [~, Sty., Lut., Mar., Kwi., Maj, Cze., Lip., Sie., Wrz., Paź., Lis., Gru.]
     order: [ :day, :month, :year ]
 
   time:

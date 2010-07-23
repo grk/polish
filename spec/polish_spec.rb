@@ -19,21 +19,14 @@ describe Polish do
     end
   end
   
-  describe "with custom backend class" do
-    it "should define i18n_backend_class" do
-      Polish.i18n_backend_class.should == I18n::Backend::Advanced
-    end
-  end
-  
   describe "during i18n initialization" do
     after(:each) do
       I18n.load_path = []
       Polish.init_i18n
     end
  
-    it "should set I18n backend to an instance of a custom backend" do
-      Polish.init_i18n
-      I18n.backend.class.should == Polish.i18n_backend_class
+    it "should extend the backend with I18n::Backend::Pluralization" do
+      I18n.backend.class.ancestors.should include(I18n::Backend::Pluralization)
     end
     
     it "should keep existing translations while switching backends" do

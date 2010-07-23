@@ -40,17 +40,10 @@ module Polish
     LOCALE
   end
   
-  # Returns custom backend class for usage with Polish library
-  # 
-  # See I18n::Backend
-  def i18n_backend_class
-    I18n::Backend::Advanced
-  end
-  
   # Init Polish i18n: set custom backend, 
   # load all translations shipped with library.
   def init_i18n
-    I18n.backend = Polish.i18n_backend_class.new
+    I18n.backend.class.send(:include, I18n::Backend::Pluralization)
     I18n.load_path.unshift(*locale_files)
   end
  
