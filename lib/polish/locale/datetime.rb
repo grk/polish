@@ -6,7 +6,7 @@
       :month_names => lambda { |date_or_time, opts|
         if opts[:format] =~ /(%d|%e)(.*)(%B)/
           [nil, 'stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 
-           'lipca', 'sierpnia', 'września', 'października', 'listpoada', 
+           'lipca', 'sierpnia', 'września', 'października', 'listopada', 
            'grudnia']
         else
           [nil, 'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 
