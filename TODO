@@ -1,5 +1,5 @@
 TODO
 ====
 
-* complete active* translation to pass the spec
-* check the unicode pluralization data: 22..24 - few or other?
+* fix the failing tests with overriding translations
+
