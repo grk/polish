@@ -8,7 +8,7 @@ group :runtime do
 end
 
 group :development do
-  gem "rspec"
+  gem "rspec", ">= 2.0.0"
   gem "i18n"
 end
 

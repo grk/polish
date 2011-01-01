@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe "with localize proxy" do
-  before(:all) do
+  before(:each) do
     @time = mock(:time)
     @options = { :format => "%d %B %Y" }
   end
@@ -29,7 +29,7 @@ describe "with translate proxy" do
 end
 
 describe "strftime" do
-  before(:all) do
+  before(:each) do
     @time = mock(:time)
   end
 

@@ -24,12 +24,12 @@ end
 
 Jeweler::GemcutterTasks.new
 
-require 'spec/rake/spectask'
- 
+require 'rspec/core'
+require 'rspec/core/rake_task'
 task :default => :spec
 desc "Run specs"
-Spec::Rake::SpecTask.new do |t|
-  t.spec_files = FileList['spec/**/*_spec.rb']
-  t.spec_opts = %w(-fs --color)
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = FileList['spec/**/*_spec.rb']
+  t.rspec_opts = %w(-fs --color)
 end
  
