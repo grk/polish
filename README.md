@@ -12,11 +12,11 @@ Install
 
 To add Polish to your Rails app, simply add it to your Gemfile:
 
-  gem "polish", ">= 0.1.0"
+`gem "polish", ">= 0.1.0"`
 
 Additionally, if you change the backend of I18n, you will need to make sure it includes the Pluralization module:
 
-  I18n.backend.class.send(:include, I18n::Backend::Pluralization)
+`I18n.backend.class.send(:include, I18n::Backend::Pluralization)`
 
 What it does
 ------------
