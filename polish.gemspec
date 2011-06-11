@@ -7,69 +7,22 @@ Gem::Specification.new do |s|
   s.name = %q{polish}
   s.version = "0.1.1"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Grzesiek Kolodziejczyk"]
   s.date = %q{2010-07-23}
   s.email = %q{gkolodziejczyk@gmail.com}
-  s.extra_rdoc_files = [
-    "LICENSE",
-     "README.md",
-     "TODO"
-  ]
-  s.files = [
-    ".gitignore",
-     "Gemfile",
-     "LICENSE",
-     "README.md",
-     "Rakefile",
-     "TODO",
-     "VERSION",
-     "lib/polish.rb",
-     "lib/polish/action_view_ext/helpers/date_helper.rb",
-     "lib/polish/locale/actionview.yml",
-     "lib/polish/locale/activerecord.yml",
-     "lib/polish/locale/activesupport.yml",
-     "lib/polish/locale/datetime.rb",
-     "lib/polish/locale/datetime.yml",
-     "lib/polish/locale/pluralize.rb",
-     "lib/polish/proxies.rb",
-     "lib/proxies.rb",
-     "polish.gemspec",
-     "rails/init.rb",
-     "spec/fixtures/en.yml",
-     "spec/fixtures/pl.yml",
-     "spec/i18n/locale/datetime_spec.rb",
-     "spec/i18n/locale/pluralization_spec.rb",
-     "spec/locale_spec.rb",
-     "spec/polish_spec.rb",
-     "spec/proxies_spec.rb",
-     "spec/spec_helper.rb"
-  ]
   s.homepage = %q{http://github.com/grk/polish}
-  s.rdoc_options = ["--charset=UTF-8"]
+
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+
   s.summary = %q{Polish language support for Ruby and Rails}
-  s.test_files = [
-    "spec/i18n/locale/datetime_spec.rb",
-     "spec/i18n/locale/pluralization_spec.rb",
-     "spec/locale_spec.rb",
-     "spec/polish_spec.rb",
-     "spec/proxies_spec.rb",
-     "spec/spec_helper.rb"
-  ]
 
-  if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
-    s.specification_version = 3
+  s.add_dependency "i18n"
+  s.add_dependency "rake"
+  s.add_dependency "bundler"
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<i18n>, [">= 0.3.3"])
-    else
-      s.add_dependency(%q<i18n>, [">= 0.3.3"])
-    end
-  else
-    s.add_dependency(%q<i18n>, [">= 0.3.3"])
-  end
+  s.add_development_dependency "rspec", ">= 2.6.0"
 end
 

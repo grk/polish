@@ -1,14 +1,13 @@
 source 'http://rubygems.org'
 
-group :runtime do
-  gem "rake"
-  gem "gemcutter"
-  gem "bundler"
-  gem "jeweler"
-end
+gemspec
 
 group :development do
-  gem "rspec", ">= 2.0.0"
-  gem "i18n"
+  gem 'guard-rspec'
+
+  if RUBY_PLATFORM =~ /darwin/
+    gem 'rb-fsevent'
+    gem 'growl'
+  end
 end
 
