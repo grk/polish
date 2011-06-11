@@ -4,6 +4,8 @@ if RUBY_VERSION < "1.9"
   $KCODE = 'u'
 end
 
+require 'i18n'
+
 # Rails hacks
 if defined?(ActionView::Helpers)
   require 'polish/action_view_ext/helpers/date_helper' 
