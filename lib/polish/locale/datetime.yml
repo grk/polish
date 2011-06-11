@@ -4,8 +4,11 @@ pl:
       default: "%d.%m.%Y"
       short: "%e %b"
       long: "%e %B %Y"
-    
-    order: [ :day, :month, :year ]
+
+    order:
+      - !ruby/sym day
+      - !ruby/sym month
+      - !ruby/sym year
 
   time:
     formats:
