@@ -1,5 +1,5 @@
-Polish
-======
+# Polish [![travis-ci][http://travis-ci.org/grk/polish.png]][http://travis-ci.org/polish] [![stillmaintained][http://stillmaintained.com/grk/polish.png]][http://stillmaintained.com/grk/polish]
+
 Polish language support for Ruby on Rails.
 
 Adds correct polish pluralization and better date formats. Also includes support for standalone months. (`"%B %Y"` should be Grudzień 2009, but `"%d. %B %Y"` should be 24. grudnia 2009).
