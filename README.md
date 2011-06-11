@@ -1,5 +1,5 @@
 # Polish
-[![travis-ci](http://travis-ci.org/grk/polish.png)](http://travis-ci.org/polish) [![stillmaintained](http://stillmaintained.com/grk/polish.png)](http://stillmaintained.com/grk/polish)
+[![travis-ci](http://travis-ci.org/grk/polish.png)](http://travis-ci.org/grk/polish) [![stillmaintained](http://stillmaintained.com/grk/polish.png)](http://stillmaintained.com/grk/polish)
 
 Polish language support for Ruby on Rails.
 
