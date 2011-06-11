@@ -1,2 +1,6 @@
 pkg/*
 polish.xcworkspace
+*.gem
+.bundle
+Gemfile.lock
+*.rbc
