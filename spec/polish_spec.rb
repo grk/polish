@@ -26,6 +26,11 @@ describe Polish do
       I18n.load_path = []
     end
 
+    after(:all) do
+      Polish.init_i18n
+      I18n.reload!
+    end
+
     it "should extend the backend with I18n::Backend::Pluralization" do
       I18n.backend.class.ancestors.should include(I18n::Backend::Pluralization)
     end
