@@ -1,6 +1,5 @@
 require 'rake'
 require 'bundler'
-require 'appraisal'
 
 begin
   Bundler.setup(:runtime, :development)
