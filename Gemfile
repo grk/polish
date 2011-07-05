@@ -2,12 +2,10 @@ source 'http://rubygems.org'
 
 gemspec
 
-group :development do
-  gem 'guard-rspec'
+gem 'guard-rspec', :group => :development
 
-  if RUBY_PLATFORM =~ /darwin/
-    gem 'rb-fsevent'
-    gem 'growl'
-  end
+if RUBY_PLATFORM =~ /darwin/
+  gem 'rb-fsevent', :group => :development
+  gem 'growl', :group => :development
 end
 
