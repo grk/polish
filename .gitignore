@@ -4,4 +4,3 @@ polish.xcworkspace
 .bundle
 Gemfile.lock
 *.rbc
-gemfiles/*
