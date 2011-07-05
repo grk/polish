@@ -4,5 +4,4 @@ rvm:
   - rbx
   - rbx-2.0
   - jruby
-before_script: "bundle exec rake appraisal:install"
-script: "bundle exec rake appraisal spec"
+script: "bundle exec rake appraisal:install && bundle exec rake appraisal spec"
