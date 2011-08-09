@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{polish}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.authors = ["Grzesiek Kolodziejczyk"]
   s.date = %q{2010-07-23}
