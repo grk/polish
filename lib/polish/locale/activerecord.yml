@@ -1,5 +1,5 @@
 pl:
-  activerecord: &activemodel
+  activerecord: &active_model
     errors:
       template:
         header:
