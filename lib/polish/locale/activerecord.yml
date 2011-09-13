@@ -36,4 +36,7 @@ pl:
         even: "musi być parzyste"
         
   activemodel:
-    <<: *active_model 
+    <<: *active_model
+
+  mongoid:
+    <<: *active_model
