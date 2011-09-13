@@ -4,6 +4,7 @@ pl:
       template:
         header:
           one:    "%{model} nie został zachowany z powodu jednego błędu"
+          few:    "%{model} nie został zachowany z powodu %{count} błędów"
           other:  "%{model} nie został zachowany z powodu %{count} błędów"
         body: "Błędy dotyczą następujących pól:"
       messages:
