@@ -96,14 +96,6 @@ pl:
       update: 'Aktualizuj %{model}'
       submit: 'Zapisz %{model}'
 
-  activemodel:
-    errors:
-      template:
-        header:
-          one:    "%{model} nie został zachowany z powodu jednego błędu"
-          other:  "%{model} nie został zachowany z powodu %{count} błędów"
-        body: "Błędy dotyczą następujących pól:"
-
   attributes:
     created_at: "Czas utworzenia"
     updated_at: "Czas aktualizacji"
