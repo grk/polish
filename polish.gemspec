@@ -5,10 +5,9 @@
 
 Gem::Specification.new do |s|
   s.name = %q{polish}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.authors = ["Grzesiek Kolodziejczyk"]
-  s.date = %q{2010-07-23}
   s.email = %q{gkolodziejczyk@gmail.com}
   s.homepage = %q{http://github.com/grk/polish}
 
