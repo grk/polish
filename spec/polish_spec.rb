@@ -4,9 +4,7 @@ require File.dirname(__FILE__) + '/spec_helper'
 
 describe Polish, "VERSION" do
   it "should be defined" do
-    %w(MAJOR MINOR TINY STRING).each do |v|
-      Polish::VERSION.const_defined?(v).should == true
-    end
+    Polish::VERSION.should be_a(String)
   end
 end
 
