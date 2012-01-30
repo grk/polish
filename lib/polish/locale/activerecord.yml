@@ -24,8 +24,8 @@ pl:
           one: "jest za krótkie (minimalnie %{count} znak)"
           few: "jest za krótkie (minimalnie %{count} znaki)"
           other: "jest za krótkie (minimalnie %{count} znaków)"
-        wrong_length: 
-          one: "jest nieprawidłowej długości (powinna wynosić 1 znak)"
+        wrong_length:
+          one: "jest nieprawidłowej długości (powinna wynosić %{count} znak)"
           few: "jest nieprawidłowej długości (powinna wynosić %{count} znaki)"
           other: "jest nieprawidłowej długości (powinna wynosić %{count} znaków)"
         taken: "zostało już zajęte"
@@ -37,7 +37,7 @@ pl:
         less_than_or_equal_to: "musi być mniejsze lub równe %{count}"
         odd: "musi być nieparzyste"
         even: "musi być parzyste"
-        
+
   activemodel:
     <<: *active_model
 
