@@ -6,6 +6,8 @@ end
 
 require 'i18n'
 
+require 'polish/version'
+
 # Rails hacks
 if defined?(ActionView::Helpers)
   require 'polish/action_view_ext/helpers/date_helper'
@@ -15,11 +17,6 @@ require 'polish/proxies'
 
 module Polish
   extend self
-
-  module VERSION
-    STRING = File.open(File.dirname(__FILE__) + "/../VERSION").gets.chomp
-    MAJOR, MINOR, TINY = STRING.split('.')
-  end
 
   # Polish locale
   LOCALE = :'pl'
