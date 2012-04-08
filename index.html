@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Polish by grk</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Polish</h1>
+        <p>Polish language support for Ruby on Rails</p>
+        <p class="view"><a href="https://github.com/grk/polish">View the Project on GitHub <small>grk/polish</small></a></p>
+        <ul>
+          <li><a href="https://github.com/grk/polish/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/grk/polish/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/grk/polish">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><a href="http://travis-ci.org/grk/polish"><img src="http://travis-ci.org/grk/polish.png" alt="travis-ci"></a> <a href="http://stillmaintained.com/grk/polish"><img src="http://stillmaintained.com/grk/polish.png" alt="stillmaintained"></a></p>
+
+<p>Adds correct polish pluralization and better date formats. Also includes support for standalone months. (<code>"%B %Y"</code> should be Grudzień 2009, but <code>"%d. %B %Y"</code> should be 24. grudnia 2009).</p>
+
+<p>Based on <a href="http://github.com/yaroslav/russian/">Russian</a> by <a href="http://github.com/yaroslav/">yaroslav</a>.</p>
+
+<h1>Install</h1>
+
+<p><em>Warning</em>: as of version 0.1.0, polish is only tested with Rails 3 and Bundler. Use with caution, might give unexpected results.</p>
+
+<p>To add Polish to your Rails app, simply add it to your Gemfile:</p>
+
+<p><code>gem "polish", "&gt;= 0.1.0"</code></p>
+
+<p>Additionally, if you change the backend of I18n, you will need to make sure it includes the Pluralization module:</p>
+
+<p><code>I18n.backend.class.send(:include, I18n::Backend::Pluralization)</code></p>
+
+<h1>What it does</h1>
+
+<p>The main feature of polish is fixing the date formats. It does that by setting the date.month_names and date.day_names translations to Procs that can detect the proper form.</p>
+
+<p>Polish also adds correct pluralization rules.</p>
+
+<h1>Overrides</h1>
+
+<p>Translations and date formats can be overridden in <code>config/locales/pl.yml</code></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/grk">grk</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+  </body>
+</html>
