@@ -1,11 +1,7 @@
-source 'http://rubygems.org'
+source "https://rubygems.org"
 
+# Specify your gem's dependencies in polish.gemspec
 gemspec
 
-gem 'guard-rspec', :group => :development
-
-if RUBY_PLATFORM =~ /darwin/
-  gem 'rb-fsevent', :group => :development
-  gem 'growl', :group => :development
-end
-
+gem "rake", "~> 13.0"
+gem "rspec", "~> 3.0"

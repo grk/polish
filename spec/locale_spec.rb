@@ -1,6 +1,4 @@
-require File.dirname(__FILE__) + '/spec_helper'
-
-describe Polish, "loading locales" do
+RSpec.describe Polish, "loading locales" do
   before(:all) do
     Polish.init_i18n
   end
@@ -18,33 +16,33 @@ describe Polish, "loading locales" do
     time.pm
   ).each do |key|
     it "should define '#{key}' in datetime translations" do
-      lookup(key).should_not be_nil
+      expect(lookup(key)).to_not be_nil
     end
 
     it "should define month_names in datetime translations" do
-      lookup(:"date.month_names").should_not be_nil
-      lookup(:"date.month_names").is_a?(Proc).should be_true
+      expect(lookup(:"date.month_names")).to_not be_nil
+      expect(lookup(:"date.month_names")).to be_a Proc
     end
 
     it "should define abbr_month_names in datetime translations" do
-      lookup(:"date.abbr_month_names").should_not be_nil
-      lookup(:"date.abbr_month_names").is_a?(Proc).should be_true
+      expect(lookup(:"date.abbr_month_names")).to_not be_nil
+      expect(lookup(:"date.abbr_month_names")).to be_a Proc
     end
 
     it "should define day_names in datetime translations" do
-      lookup(:"date.day_names").should_not be_nil
-      lookup(:"date.day_names").is_a?(Proc).should be_true
+      expect(lookup(:"date.day_names")).to_not be_nil
+      expect(lookup(:"date.day_names")).to be_a Proc
     end
 
     it "should define abbr_day_names in datetime translations" do
-      lookup(:"date.abbr_day_names").should_not be_nil
-      lookup(:"date.abbr_day_names").is_a?(Proc).should be_true
+      expect(lookup(:"date.abbr_day_names")).to_not be_nil
+      expect(lookup(:"date.abbr_day_names")).to be_a Proc
     end
   end
 
   it "should load pluralization rules" do
-    lookup(:"i18n.plural.rule").should_not be_nil
-    lookup(:"i18n.plural.rule").is_a?(Proc).should be_true
+    expect(lookup(:"i18n.plural.rule")).to_not be_nil
+    expect(lookup(:"i18n.plural.rule")).to be_a Proc
   end
 
   %w(
@@ -90,7 +88,7 @@ describe Polish, "loading locales" do
     helpers.submit.submit
   ).each do |key|
     it "should define '#{key}' in actionview translations" do
-      lookup(key).should_not be_nil
+      expect(lookup(key)).to_not be_nil
     end
   end
 
@@ -117,11 +115,11 @@ describe Polish, "loading locales" do
     errors.messages.record_invalid
    ).each do |key|
     it "should define 'activerecord.#{key}' in activerecord translations" do
-      lookup('activerecord.' + key).should_not be_nil
+      expect(lookup('activerecord.' + key)).to_not be_nil
     end
 
     it "should define 'activemodel.#{key}' in activemodel translations" do
-      lookup('activemodel.' + key).should_not be_nil
+      expect(lookup('activemodel.' + key)).to_not be_nil
     end
   end
 
@@ -134,7 +132,7 @@ describe Polish, "loading locales" do
     support.array.last_word_connector
   ).each do |key|
     it "should define '#{key}' in activesupport translations" do
-      lookup(key).should_not be_nil
+      expect(lookup(key)).to_not be_nil
     end
   end
 

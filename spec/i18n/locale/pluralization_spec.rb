@@ -1,6 +1,4 @@
-require File.dirname(__FILE__) + '/../../spec_helper'
- 
-describe I18n, "Polish pluralization" do
+RSpec.describe I18n, "Polish pluralization" do
   before(:each) do
     @hash = {}
     %w(one few other).each do |key|
@@ -8,34 +6,34 @@ describe I18n, "Polish pluralization" do
     end
     @backend = I18n.backend
   end
-  
+
   it "should pluralize correctly" do
-    @backend.send(:pluralize, :'pl', @hash, 1).should == 'one'
-    @backend.send(:pluralize, :'pl', @hash, 2).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 3).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 4).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 5).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 10).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 11).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 12).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 13).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 14).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 20).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 21).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 22).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 23).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 24).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 25).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 30).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 31).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 32).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 33).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 34).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 112).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 122).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 132).should == 'few'
-    @backend.send(:pluralize, :'pl', @hash, 1.31).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 2.31).should == 'other'
-    @backend.send(:pluralize, :'pl', @hash, 3.31).should == 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 1)).to eq 'one'
+    expect(@backend.send(:pluralize, :'pl', @hash, 2)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 3)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 4)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 5)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 10)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 11)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 12)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 13)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 14)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 20)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 21)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 22)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 23)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 24)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 25)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 30)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 31)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 32)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 33)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 34)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 112)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 122)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 132)).to eq 'few'
+    expect(@backend.send(:pluralize, :'pl', @hash, 1.31)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 2.31)).to eq 'other'
+    expect(@backend.send(:pluralize, :'pl', @hash, 3.31)).to eq 'other'
   end
 end
