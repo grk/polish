@@ -4,7 +4,7 @@
   :'pl' => {
     :date => {
       :month_names => lambda { |date_or_time, opts|
-        if opts[:format] =~ /(%d|%e)(.*)(%B)/
+        if opts[:format] =~ /(%d|%-d|%e)(.*)(%B)/
           [nil, 'stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 
            'lipca', 'sierpnia', 'września', 'października', 'listopada', 
            'grudnia']
